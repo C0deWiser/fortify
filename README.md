@@ -49,7 +49,7 @@ if (Fortify::hasProfileFeatures()) {
             ->name('user-profile-information.show');
             
         Route::view('/user/password', 'auth.user-password')
-            ->name('user-profile-information.show');
+            ->name('user-password.show');
         
         Route::view('/user/two-factor-authentication', 'auth.two-factor-setup')
             ->name('two-factor.show');
