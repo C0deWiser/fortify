@@ -22,9 +22,11 @@
     "laravel/framework": "^12.31",
     "laravel/fortify": "^1.30"
   },
-  "laravel": {
-    "providers": [
-      "Codewiser\\Fortify\\AssetsServiceProvider"
-    ]
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Codewiser\\Fortify\\AssetsServiceProvider"
+      ]
+    }
   }
 }
