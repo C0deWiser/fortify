@@ -3,13 +3,13 @@
 This package provides blade templates for every view, described by [Laravel 
 Fortify](https://laravel.com/docs/12.x/fortify).
 
-First, publish views (and lang files).
+First, publish resources.
 
 ```shell
 php artisan vendor:publish --tag=fortify
 ```
 
-Second, setup views in `FortifyServiceProvider` class.
+Next, setup views in `FortifyServiceProvider` class.
 
 ```php
 use Illuminate\Support\ServiceProvider;
@@ -34,6 +34,12 @@ class FortifyServiceProvider extends ServiceProvider
     }
 }
 ```
+
+Finally, change views from `resources/views/auth` however you like.
+
+> P.S.        
+> After publishing the package resources, you may remove the package from your
+> application.
 
 ## User profile page
 
@@ -73,8 +79,3 @@ Route::middleware('auth')->group(function () {
     Route::view('/user/two-factor-authentication', 'auth.two-factor-setup');
 };
 ```
-
-## The end
-
-After publishing the package resources, you may remove the package from your 
-application.
