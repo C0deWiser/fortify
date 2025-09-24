@@ -1,0 +1,25 @@
+{
+    "name": "codewiser/fortify",
+    "description": "Blade templates for Laravel Fortify",
+    "type": "stub",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Codewiser\\Fortify\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pm",
+            "email": "pm@101media.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+      "php": "^8.2"
+    },
+    "require-dev": {
+        "laravel/framework": "^12.31",
+        "laravel/fortify": "^1.30"
+    }
+}
