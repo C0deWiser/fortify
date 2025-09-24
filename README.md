@@ -35,47 +35,30 @@ class FortifyServiceProvider extends ServiceProvider
 }
 ```
 
+Next, declare routes to optional user pages: profile information, password 
+update and two-factor setup.
+
+```php
+use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Features as Fortify;
+
+if (Fortify::hasProfileFeatures()) {
+    Route::middleware('auth')->group() {
+    
+        Route::view('/user/profile', 'auth.profile-information')
+            ->name('user-profile-information.show');
+            
+        Route::view('/user/password', 'auth.user-password')
+            ->name('user-profile-information.show');
+        
+        Route::view('/user/two-factor-authentication', 'auth.two-factor-setup')
+            ->name('two-factor.show');
+    });
+}
+```
+
 Finally, change views from `resources/views/auth` however you like.
 
 > P.S.        
 > After publishing the package resources, you may remove the package from your
 > application.
-
-## User profile page
-
-This package provides a simple user profile page. It's up to you to enable it.
-
-```php
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
-use Laravel\Fortify\Contracts\ProfileInformationUpdatedResponse;
-
-Route::middleware('auth')->group(function () {
-    
-    Route::view('/profile', 'auth.profile');
-    
-    Route::put('/profile', 
-        function(Request $request, UpdatesUserProfileInformation $updater) {
-            
-            $updater->update($request->user(), $request->all());
-    
-            return app(ProfileInformationUpdatedResponse::class)
-        }
-    )->name('user-profile');
-});
-```
-
-## Two-factor setup page
-
-If you need two-factor authentication in your application, 
-you may add a route to the page, where user can enable or disable two-factor 
-authentication and may see the recovery codes.
-
-```php
-use Illuminate\Support\Facades\Route;
-
-Route::middleware('auth')->group(function () {
-    Route::view('/user/two-factor-authentication', 'auth.two-factor-setup');
-};
-```

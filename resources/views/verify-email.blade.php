@@ -11,10 +11,12 @@
         {{ __('Your email: :email', ['email' => request()->user()->email]) }}
     </p>
 
-    @if(\Illuminate\Support\Facades\Route::has('user-profile'))
+    @if(\Illuminate\Support\Facades\Route::has('user-profile-information.show'))
         <p>
             {!! str(
-                    __('You may change your email at [profile page](:href).', ['href' => route('user-profile')])
+                    __('You may change your email at [profile page](:href).', [
+                        'href' => route('user-profile-information.show')
+                    ])
                 )->markdown()
             !!}
         </p>
