@@ -5,24 +5,23 @@
 
     <p>
         {{ __('You have to verify your email before you may continue to the application.') }}
-    </p>
-
-    <p>
-        {{ __('Your email: :email', ['email' => request()->user()->email]) }}
+        <br>
+        {!! str(
+            __('Your email is `:email`', ['email' => request()->user()->email])
+        )->markdown() !!}
     </p>
 
     @if(\Illuminate\Support\Facades\Route::has('user-profile-information.show'))
         <p>
             {!! str(
-                    __('You may change your email at [profile page](:href).', [
-                        'href' => route('user-profile-information.show')
-                    ])
-                )->markdown()
-            !!}
+                __('You may change your email at [profile page](:href).', [
+                    'href' => route('user-profile-information.show')
+                ])
+            )->markdown() !!}
         </p>
     @endif
 
-    @if (session('status') == 'verification-link-sent')
+    @if (session('status') == \Laravel\Fortify\Fortify::VERIFICATION_LINK_SENT)
         <div class="mb-4 font-medium text-sm text-green-600">
             {{ __(session('status')) }}
         </div>

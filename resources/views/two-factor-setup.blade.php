@@ -48,7 +48,7 @@
 
         <!-- https://laravel.com/docs/12.x/fortify#enabling-two-factor-authentication -->
 
-        @if (session('status') == 'two-factor-authentication-enabled')
+        @if (session('status') == \Laravel\Fortify\Fortify::TWO_FACTOR_AUTHENTICATION_ENABLED)
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ __('Please finish configuring two factor authentication below.') }}
             </div>
