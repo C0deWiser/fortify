@@ -1,4 +1,4 @@
-# Fortify Assets
+# Fortify blade templates 
 
 This package provides blade templates for every view, described by [Laravel 
 Fortify](https://laravel.com/docs/12.x/fortify).
@@ -59,6 +59,6 @@ if (Fortify::hasProfileFeatures()) {
 
 Finally, change views from `resources/views/auth` however you like.
 
-> P.S.        
-> After publishing the package resources, you may remove the package from your
-> application.
+**P.S.**        
+After publishing the package resources, you may remove the package from your
+application.
