@@ -22,13 +22,13 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Fortify::loginView(fn() => view('vendor.fortify.login'));
-        Fortify::registerView(fn() => view('vendor.fortify.register'));
-        Fortify::verifyEmailView(fn() => view('vendor.fortify.verify-email'));
-        Fortify::confirmPasswordView(fn() => view('vendor.fortify.confirm-password'));
-        Fortify::twoFactorChallengeView(fn() => view('vendor.fortify.two-factor-challenge'));
-        Fortify::requestPasswordResetLinkView(fn() => view('vendor.fortify.forgot-password'));
-        Fortify::resetPasswordView(fn(Request $request) => view('vendor.fortify.reset-password', [
+        Fortify::loginView(fn() => view('auth.login'));
+        Fortify::registerView(fn() => view('auth.register'));
+        Fortify::verifyEmailView(fn() => view('auth.verify-email'));
+        Fortify::confirmPasswordView(fn() => view('auth.confirm-password'));
+        Fortify::twoFactorChallengeView(fn() => view('auth.two-factor-challenge'));
+        Fortify::requestPasswordResetLinkView(fn() => view('auth.forgot-password'));
+        Fortify::resetPasswordView(fn(Request $request) => view('auth.reset-password', [
             'request' => $request
         ]));
     }
@@ -47,7 +47,7 @@ use Laravel\Fortify\Contracts\ProfileInformationUpdatedResponse;
 
 Route::middleware('auth')->group(function () {
     
-    Route::view('/profile', 'vendor.fortify.profile');
+    Route::view('/profile', 'auth.profile');
     
     Route::put('/profile', 
         function(Request $request, UpdatesUserProfileInformation $updater) {
@@ -69,7 +69,7 @@ authentication and may see the recovery codes.
 ```php
 use Illuminate\Support\Facades\Route;
 
-Route::view('/user/two-factor-authentication', 'vendor.fortify.two-factor-setup')
-    ->middleware('auth')
-    ->name('two-factor');
+Route::middleware('auth')->group(function () {
+    Route::view('/user/two-factor-authentication', 'auth.two-factor-setup');
+};
 ```

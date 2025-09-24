@@ -12,8 +12,8 @@ class AssetsServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'fortify');
 
         $this->publishes([
-            __DIR__.'/../lang' => $this->app->langPath('vendor/fortify'),
-            __DIR__.'/../resources/views' => resource_path('views/vendor/fortify'),
+            __DIR__.'/../lang' => $this->app->langPath(),
+            __DIR__.'/../resources/views' => resource_path('views/auth'),
         ], 'fortify');
 
     }
