@@ -73,3 +73,8 @@ Route::middleware('auth')->group(function () {
     Route::view('/user/two-factor-authentication', 'auth.two-factor-setup');
 };
 ```
+
+## The end
+
+After publishing the package resources, you may remove the package from your 
+application.
