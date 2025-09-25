@@ -35,7 +35,7 @@ class FortifyServiceProvider extends ServiceProvider
 }
 ```
 
-Finally, change views from `resources/views/auth` however you like.
+Finally, customize blades in `resources/views/auth` however you like.
 
 ### Additional routes
 
