@@ -2,11 +2,7 @@
 
     <h1>{{ __('Profile information') }}</h1>
 
-    @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __(session('status')) }}
-        </div>
-    @endif
+    @include('auth.status')
 
     <form method="post" action="{{ route('user-profile-information.update') }}">
         @csrf
@@ -16,7 +12,7 @@
             <label for="name">{{ __('Name') }}</label>
             <input type="text" name="name" required value="{{ request()->user()->name }}">
 
-            @error('name')
+            @error('name', 'updateProfileInformation')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -25,7 +21,7 @@
             <label for="email">{{ __('Email') }}</label>
             <input type="email" name="email" required value="{{ request()->user()->email }}">
 
-            @error('email')
+            @error('email', 'updateProfileInformation')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

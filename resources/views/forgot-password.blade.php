@@ -3,11 +3,7 @@
 
     <h1>{{ __('Requesting a Password Reset Link') }}</h1>
 
-    @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __(session('status')) }}
-        </div>
-    @endif
+    @include('auth.status')
 
     <form method="post" action="{{ route('password.email') }}">
         @csrf

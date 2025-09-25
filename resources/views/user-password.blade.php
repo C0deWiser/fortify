@@ -2,11 +2,7 @@
 
     <h1>{{ __('Password') }}</h1>
 
-    @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __(session('status')) }}
-        </div>
-    @endif
+    @include('auth.status')
 
     <form method="post" action="{{ route('user-password.update') }}">
         @csrf
@@ -16,7 +12,7 @@
             <label for="current_password">{{ __('Current password') }}</label>
             <input type="password" name="current_password" required>
 
-            @error('current_password')
+            @error('current_password', 'updatePassword')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -25,7 +21,7 @@
             <label for="password">{{ __('New password') }}</label>
             <input type="password" name="password" required>
 
-            @error('password')
+            @error('password', 'updatePassword')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -34,7 +30,7 @@
             <label for="password_confirmation">{{ __('Password confirmation') }}</label>
             <input type="password" name="password_confirmation" required>
 
-            @error('password_confirmation')
+            @error('password_confirmation', 'updatePassword')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

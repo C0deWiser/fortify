@@ -22,9 +22,7 @@
     @endif
 
     @if (session('status') == \Laravel\Fortify\Fortify::VERIFICATION_LINK_SENT)
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __(session('status')) }}
-        </div>
+        @include('auth.status')
     @else
         <div class="mb-4 font-medium text-sm text-green-600">
             {{ __('Press a button below and we will send you a new email verification link.') }}

@@ -6,11 +6,7 @@
         {{ __('Two-factor authentication (2FA) is an additional layer of security that ensures that only you can access your Account, even if your password is revealed to someone else.') }}
     </p>
 
-    @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __(session('status')) }}
-        </div>
-    @endif
+    @include('auth.status')
 
     @if (request()->user()->hasEnabledTwoFactorAuthentication())
 

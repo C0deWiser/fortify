@@ -35,30 +35,19 @@ class FortifyServiceProvider extends ServiceProvider
 }
 ```
 
-Next, declare routes to optional user pages: profile information, password 
-update and two-factor setup.
-
-```php
-use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features as Fortify;
-
-if (Fortify::hasProfileFeatures()) {
-    Route::middleware('auth')->group() {
-    
-        Route::view('/user/profile', 'auth.profile-information')
-            ->name('user-profile-information.show');
-            
-        Route::view('/user/password', 'auth.user-password')
-            ->name('user-password.show');
-        
-        Route::view('/user/two-factor-authentication', 'auth.two-factor-setup')
-            ->name('two-factor.show');
-    });
-}
-```
-
 Finally, change views from `resources/views/auth` however you like.
 
-**P.S.**        
-After publishing the package resources, you may remove the package from your
-application.
+### Additional routes
+
+Package provides few additional user pages: profile information, password
+update and two-factor setup.
+
+These routes are available if relevant Fortify features have been enabled. 
+
+| Route name                      | Allows user...                    |
+|---------------------------------|-----------------------------------|
+| `user-profile-information.show` | to change name and email          |
+| `user-password.show`            | to update password                |
+| `two-factor.show`               | to setup two factor authorization |
+
+You may add this routes to a user menu.
