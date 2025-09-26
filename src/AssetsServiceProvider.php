@@ -11,7 +11,7 @@ class AssetsServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/auth'),
+            __DIR__.'/../resources/views/auth' => resource_path('views/auth'),
         ], 'fortify');
 
     }
