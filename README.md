@@ -1,11 +1,22 @@
-# Fortify blade templates 
+# Fortify user forms scaffolding
 
-This package provides blade templates for every view, described by [Laravel 
-Fortify](https://laravel.com/docs/12.x/fortify).
+As we know,
+[Laravel Fortify](https://laravel.com/docs/12.x/fortify)
+provides all the backend authentication logic. And missing all 
+user forms. We need to develop it ourselves.
 
-First, publish resources.
+Every time I install Fortify, I create the same user forms... And... why not 
+to create it once?
+
+This package provides blade templates for every view, described by Fortify.
+
+Install Fortify (this package already requires `laravel/fortify`) and publish 
+resources.
 
 ```shell
+composer require codewiser/fortify
+
+php artisan fortify:install
 php artisan vendor:publish --tag=fortify
 ```
 
