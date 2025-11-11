@@ -31,19 +31,22 @@
             <input type="checkbox" name="remember">
         </div>
 
-
         <div>
             <button type="submit">{{ __('Submit') }}</button>
         </div>
 
     </form>
 
+    @if(Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::resetPasswords()))
     <div>
         <a href="{{ route('password.request') }}">{{ __('Password reset') }}</a>
     </div>
+    @endif
 
+    @if(Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::registration()))
     <div>
         <a href="{{ route('register') }}">{{ __('Sign Up') }}</a>
     </div>
+    @endif
 
 </div>
