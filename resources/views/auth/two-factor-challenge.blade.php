@@ -1,7 +1,7 @@
 <div>
     <!-- https://laravel.com/docs/12.x/fortify#authenticating-with-two-factor-authentication -->
 
-    <h1>{{ __("Login to the application") }}</h1>
+    <h1>@lang('Login to the application')</h1>
 
     @include('auth.status')
 
@@ -9,7 +9,7 @@
         @csrf
 
         <div>
-            <label for="code">{{ __('Confirmation code') }}</label>
+            <label for="code">@lang('Confirmation code')</label>
             <input type="text" name="code" required>
 
             @error('code')
@@ -18,7 +18,7 @@
         </div>
 
         <div>
-            <button type="submit">{{ __('Confirm') }}</button>
+            <button type="submit">@lang('Confirm')</button>
         </div>
 
     </form>

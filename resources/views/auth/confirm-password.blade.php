@@ -1,7 +1,7 @@
 <div>
     <!-- https://laravel.com/docs/12.x/fortify#password-confirmation -->
 
-    <h1>{{ __('Password Confirmation') }}</h1>
+    <h1>@lang('Password Confirmation')</h1>
 
     @include('auth.status')
 
@@ -9,7 +9,7 @@
         @csrf
 
         <div>
-            <label for="password">{{ __('Password') }}</label>
+            <label for="password">@lang('Password')</label>
             <input type="password" name="password" required>
 
             @error('password')
@@ -18,11 +18,11 @@
         </div>
 
         <div>
-            <button type="submit">{{ __('Submit') }}</button>
+            <button type="submit">@lang('Submit')</button>
         </div>
     </form>
 
     <div>
-        <a href="/">{{ __('Home') }}</a>
+        <a href="/">@lang('Home')</a>
     </div>
 </div>

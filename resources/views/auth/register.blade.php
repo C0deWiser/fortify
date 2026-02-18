@@ -1,7 +1,7 @@
 <div>
     <!-- https://laravel.com/docs/12.x/fortify#registration -->
 
-    <h1>{{ __('Registration') }}</h1>
+    <h1>@lang('Registration')</h1>
 
     @include('auth.status')
 
@@ -9,7 +9,7 @@
         @csrf
 
         <div>
-            <label for="name">{{ __('Name') }}</label>
+            <label for="name">@lang('Name')</label>
             <input type="text" name="name" required value="{{ old('name') }}">
 
             @error('name')
@@ -18,7 +18,7 @@
         </div>
 
         <div>
-            <label for="email">{{ __('Email') }}</label>
+            <label for="email">@lang('Email')</label>
             <input type="email" name="email" required value="{{ old('email') }}">
 
             @error('email')
@@ -27,7 +27,7 @@
         </div>
 
         <div>
-            <label for="password">{{ __('Password') }}</label>
+            <label for="password">@lang('Password')</label>
             <input type="password" name="password" required>
 
             @error('password')
@@ -36,7 +36,7 @@
         </div>
 
         <div>
-            <label for="password_confirmation">{{ __('Password confirmation') }}</label>
+            <label for="password_confirmation">@lang('Password confirmation')</label>
             <input type="password" name="password_confirmation" required>
 
             @error('password_confirmation')
@@ -45,13 +45,13 @@
         </div>
 
         <div>
-            <button type="submit">{{ __('Submit') }}</button>
+            <button type="submit">@lang('Submit')</button>
         </div>
 
     </form>
 
     <div>
-        <a href="{{ route('login') }}">{{ __('Sign In') }}</a>
+        <a href="{{ route('login') }}">@lang('Sign In')</a>
     </div>
 
 </div>

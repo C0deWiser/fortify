@@ -1,9 +1,9 @@
 <div>
 
-    <h1>{{ __('Two-factor authentication') }}</h1>
+    <h1>@lang('Two-factor authentication')</h1>
 
     <p>
-        {{ __('Two-factor authentication (2FA) is an additional layer of security that ensures that only you can access your Account, even if your password is revealed to someone else.') }}
+        @lang('Two-factor authentication (2FA) is an additional layer of security that ensures that only you can access your Account, even if your password is revealed to someone else.')
     </p>
 
     @include('auth.status')
@@ -13,7 +13,7 @@
         <!-- https://laravel.com/docs/12.x/fortify#displaying-the-recovery-codes -->
 
         <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __('These recovery codes allow the user to authenticate if they lose access to their mobile device.') }}
+            @lang('These recovery codes allow the user to authenticate if they lose access to their mobile device.')
         </div>
         <ul>
             @foreach (request()->user()->recoveryCodes() as $code)
@@ -25,7 +25,7 @@
             @csrf
 
             <div>
-                <button type="submit">{{ __('Refresh recovery codes') }}</button>
+                <button type="submit">@lang('Refresh recovery codes')</button>
             </div>
         </form>
 
@@ -36,7 +36,7 @@
             @method('delete')
 
             <div>
-                <button type="submit">{{ __('Disable 2FA') }}</button>
+                <button type="submit">@lang('Disable 2FA')</button>
             </div>
         </form>
 
@@ -46,7 +46,7 @@
 
         @if (session('status') == \Laravel\Fortify\Fortify::TWO_FACTOR_AUTHENTICATION_ENABLED)
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('Please finish configuring two factor authentication below.') }}
+                @lang('Please finish configuring two factor authentication below.')
             </div>
 
             <a href="{{ request()->user()->twoFactorQrCodeUrl() }}">
@@ -57,7 +57,7 @@
                 @csrf
 
                 <div>
-                    <label for="code">{{ __('Confirmation code') }}</label>
+                    <label for="code">@lang('Confirmation code')</label>
                     <input type="text" name="code" required>
 
                     @error('code')
@@ -66,25 +66,25 @@
                 </div>
 
                 <div>
-                    <button type="submit">{{ __('Confirm') }}</button>
+                    <button type="submit">@lang('Confirm')</button>
                 </div>
             </form>
 
         @else
 
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('Before using 2FA, you must install any TOTP application (e.g. Google Authenticator, Twilio Authy or other) on your trusted device (a phone usually) and connect it by scanning the QR-code that will appear here after enabling the function.') }}
+                @lang('Before using 2FA, you must install any TOTP application (e.g. Google Authenticator, Twilio Authy or other) on your trusted device (a phone usually) and connect it by scanning the QR-code that will appear here after enabling the function.')
             </div>
 
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __("The first time you sign in on a new device or browser, you'll need to enter your password and the digital verification code that's automatically displayed on your trusted device in the TOTP app.") }}
+                @lang('The first time you sign in on a new device or browser, you\'ll need to enter your password and the digital verification code that\'s automatically displayed on your trusted device in the TOTP app.')
             </div>
 
             <form method="post" action="{{ route('two-factor.enable') }}">
                 @csrf
 
                 <div>
-                    <button type="submit">{{ __('Enable 2FA') }}</button>
+                    <button type="submit">@lang('Enable 2FA')</button>
                 </div>
             </form>
 
@@ -95,7 +95,7 @@
         @csrf
 
         <div>
-            <button type="submit">{{ __('Sign Out') }}</button>
+            <button type="submit">@lang('Sign Out')</button>
         </div>
     </form>
 

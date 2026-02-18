@@ -1,6 +1,6 @@
 <div>
 
-    <h1>{{ __('Password') }}</h1>
+    <h1>@lang('Password')</h1>
 
     @include('auth.status')
 
@@ -9,7 +9,7 @@
         @method('PUT')
 
         <div>
-            <label for="current_password">{{ __('Current password') }}</label>
+            <label for="current_password">@lang('Current password')</label>
             <input type="password" name="current_password" required>
 
             @error('current_password', 'updatePassword')
@@ -18,7 +18,7 @@
         </div>
 
         <div>
-            <label for="password">{{ __('New password') }}</label>
+            <label for="password">@lang('New password')</label>
             <input type="password" name="password" required>
 
             @error('password', 'updatePassword')
@@ -27,7 +27,7 @@
         </div>
 
         <div>
-            <label for="password_confirmation">{{ __('Password confirmation') }}</label>
+            <label for="password_confirmation">@lang('Password confirmation')</label>
             <input type="password" name="password_confirmation" required>
 
             @error('password_confirmation', 'updatePassword')
@@ -36,7 +36,7 @@
         </div>
 
         <div>
-            <button type="submit">{{ __('Submit') }}</button>
+            <button type="submit">@lang('Submit')</button>
         </div>
 
     </form>

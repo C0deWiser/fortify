@@ -1,10 +1,10 @@
 <div>
     <!-- https://laravel.com/docs/12.x/fortify#email-verification -->
 
-    <h1>{{ __('Email Verification') }}</h1>
+    <h1>@lang('Email Verification')</h1>
 
     <p>
-        {{ __('You have to verify your email before you may continue to the application.') }}
+        @lang('You have to verify your email before you may continue to the application.')
         <br>
         {!! str(
             __('Your email is `:email`', ['email' => request()->user()->email])
@@ -25,7 +25,7 @@
         @include('auth.status')
     @else
         <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __('Press a button below and we will send you a new email verification link.') }}
+            @lang('Press a button below and we will send you a new email verification link.')
         </div>
     @endif
 
@@ -33,7 +33,7 @@
         @csrf
 
         <div>
-            <button type="submit">{{ __('Send verification link') }}</button>
+            <button type="submit">@lang('Send verification link')</button>
         </div>
 
     </form>
@@ -42,12 +42,12 @@
         @csrf
 
         <div>
-            <button type="submit">{{ __('Sign Out') }}</button>
+            <button type="submit">@lang('Sign Out')</button>
         </div>
     </form>
 
     <div>
-        <a href="/">{{ __('Home') }}</a>
+        <a href="/">@lang('Home')</a>
     </div>
 
 </div>
