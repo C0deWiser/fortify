@@ -10,7 +10,7 @@
 
         <div>
             <label for="current_password">@lang('Current password')</label>
-            <input type="password" name="current_password" required>
+            <input type="password" name="current_password" required autofocus autocomplete="current-password">
 
             @error('current_password', 'updatePassword')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -19,7 +19,7 @@
 
         <div>
             <label for="password">@lang('New password')</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" required autocomplete="new-password">
 
             @error('password', 'updatePassword')
             <div class="alert alert-danger">{{ $message }}</div>

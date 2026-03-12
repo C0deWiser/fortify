@@ -12,7 +12,7 @@
 
         <div>
             <label for="email">@lang('Email')</label>
-            <input type="email" name="email" required value="{{ request()->input('email') }}">
+            <input type="email" name="email" required autofocus autocomplete="email" value="{{ request()->input('email') }}">
 
             @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -21,7 +21,7 @@
 
         <div>
             <label for="password">@lang('New password')</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" required autocomplete="new-password">
 
             @error('password')
             <div class="alert alert-danger">{{ $message }}</div>

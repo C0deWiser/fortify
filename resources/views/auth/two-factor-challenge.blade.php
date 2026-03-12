@@ -10,7 +10,7 @@
 
         <div>
             <label for="code">@lang('Confirmation code')</label>
-            <input type="text" name="code" required>
+            <input type="text" name="code" required autofocus autocomplete="one-time-code">
 
             @error('code')
             <div class="alert alert-danger">{{ $message }}</div>

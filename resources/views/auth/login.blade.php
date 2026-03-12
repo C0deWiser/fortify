@@ -10,7 +10,7 @@
 
         <div>
             <label for="email">@lang('Email')</label>
-            <input type="email" name="email" required value="{{ old('email') }}">
+            <input type="email" name="email" required autofocus autocomplete="email" value="{{ old('email') }}">
 
             @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -19,7 +19,7 @@
 
         <div>
             <label for="password">@lang('Password')</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" required autocomplete="current-password">
 
             @error('password')
             <div class="alert alert-danger">{{ $message }}</div>
