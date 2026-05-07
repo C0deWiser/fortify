@@ -17,7 +17,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^8.2",
-    "laravel/fortify": "^1.30"
+    "laravel/fortify": "^1.37"
   },
   "require-dev": {
     "laravel/framework": "^12.31"

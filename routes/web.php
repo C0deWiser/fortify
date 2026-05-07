@@ -16,4 +16,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::view('/user/two-factor-authentication', 'auth.two-factor-setup')
         ->when(Fortify::canManageTwoFactorAuthentication())
         ->name('two-factor.show');
+
+    Route::view('/user/passkeys', 'auth.user-passkeys')
+        ->when(Fortify::canManagePasskeys())
+        ->name('passkey.index');
 });
