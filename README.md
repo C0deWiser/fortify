@@ -60,5 +60,6 @@ These routes are available if relevant Fortify features have been enabled.
 | `user-profile-information.show` | to change name and email          |
 | `user-password.show`            | to update password                |
 | `two-factor.show`               | to setup two factor authorization |
+| `passkey.index`                 | to list passkeys                  |
 
 You may add this routes to a user menu.
