@@ -51,7 +51,7 @@ Finally, customize blades in `resources/views/auth` however you like.
 ### Additional routes
 
 Package provides few additional user pages: profile information, password
-update and two-factor setup.
+update, two-factor setup and passkeys manager.
 
 These routes are available if relevant Fortify features have been enabled. 
 
