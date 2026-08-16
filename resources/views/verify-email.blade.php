@@ -15,20 +15,16 @@
 
     <p class="alert">
         @lang('You have to verify your email before you may continue to the application.')
-        <br>
-        {!! str(
-            __('Your email is `:email`', ['email' => request()->user()->email])
-        )->markdown() !!}
     </p>
 
+    {!! str(__('Your email is `:email`.', [
+        'email' => request()->user()->email
+    ]))->markdown() !!}
+
     @if(Route::has('user-profile-information.show'))
-        <p>
-            {!! str(
-                __('You may change your email at [profile page](:href).', [
-                    'href' => route('user-profile-information.show')
-                ])
-            )->markdown() !!}
-        </p>
+        {!! str(__('You may change your email at [profile page](:href).', [
+            'href' => route('user-profile-information.show')
+        ]))->markdown() !!}
     @endif
 
     @if (session('status') == Fortify::VERIFICATION_LINK_SENT)

@@ -46,10 +46,12 @@
 
     </form>
 
-    @if(Features::enabled(Features::passkeys()))
+    @if(Features::canManagePasskeys())
 
-        <div id="passkeyLogin" data-options-url="{{ route('passkey.login-options') }}"
-             data-login-url="{{ route('passkey.login') }}" hidden></div>
+        <div id="passkeyLogin"
+             data-options-url="{{ route('passkey.login-options') }}"
+             data-login-url="{{ route('passkey.login') }}"
+             hidden></div>
 
         @push('scripts')
             <script src="/vendor/fortify/passkeys.js" defer></script>

@@ -6,14 +6,11 @@
 </head>
 <body>
 
-<div class="codewiser-fortify">
-
-    <x-fortify-nav/>
+<x-fortify-nav/>
 
 <main>
     @yield('content')
 </main>
-</div>
 
 @stack('scripts')
 

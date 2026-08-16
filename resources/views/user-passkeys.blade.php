@@ -32,6 +32,7 @@
     <p>@lang('Passkeys allow users to authenticate without passwords using platform authenticators such as Face ID, Touch ID, Windows Hello, or hardware security keys.')</p>
 
     <p class="alert" id="passkeyUnsupported" style="display: none">
+        <!-- js publishes environment errors to here -->
         @lang('Your device does not support passkeys.')
     </p>
 
@@ -86,6 +87,7 @@
             <label for="name">@lang('Passkey name')</label>
             <input type="text" name="name" required value="{{ old('name') }}" placeholder="@lang('e.g. My Phone')">
 
+            <!-- js publishes response errors to here -->
             <div class="invalid">@error('name'){{ $message }}@enderror</div>
         </div>
 

@@ -1,24 +1,24 @@
+:root {
+    /* Tells the browser your site natively supports light and dark themes */
+    color-scheme: light dark;
+}
 body {
     padding: 0;
     margin: 0;
-}
-
-.codewiser-fortify {
-
-    font-family: system-ui;
-    font-size: 14px;
 
     color: CanvasText;
     background-color: Canvas;
+
+    font-family: system-ui;
+    font-size: 14px;
 }
 
-.codewiser-fortify p,
-.codewiser-fortify ul {
+p,
+ul {
     margin: 0 0 1rem;
 }
 
-.codewiser-fortify a,
-.codewiser-fortify .button-link {
+a, .button-link {
     margin: 0;
     padding: 0;
     border: none;
@@ -29,28 +29,22 @@ body {
     box-shadow: none;
     line-height: 1.5rem;
 }
-.codewiser-fortify a:hover,
-.codewiser-fortify .button-link:hover {
+a:hover, .button-link:hover {
     color: HighlightText;
 }
-.codewiser-fortify a:active,
-.codewiser-fortify .button-link:active {
+a:active, .button-link:active {
     color: ActiveText;
 }
-.codewiser-fortify a:visited,
-.codewiser-fortify .button-link:visited {
+a:visited, .button-link:visited {
     color: VisitedText;
 }
 
-.codewiser-fortify button,
-.codewiser-fortify input,
-.codewiser-fortify .notice,
-.codewiser-fortify .alert {
+button, input, .notice, .alert {
     padding: 10px 12px;
     font-size: 100%;
 }
 
-.codewiser-fortify button {
+button {
     box-shadow: 0 0 3px ButtonFace;
     border: 1px solid ButtonFace;
     border-radius: 6px;
@@ -58,15 +52,21 @@ body {
     color: ButtonText;
     cursor: pointer;
 }
-.codewiser-fortify input {
+input {
     box-shadow: 0 0 3px ButtonFace inset;
     border: 1px solid ButtonFace;
     border-radius: 6px;
     background-color: Field;
     color: FieldText;
 }
+code {
+    color: MarkText;
+    background: Mark;
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
 
-.codewiser-fortify nav {
+nav {
     padding: 1rem;
     margin: 0 0 2rem;
 
@@ -80,11 +80,11 @@ body {
     justify-content: space-around;
 }
 
-.codewiser-fortify nav > * {
+nav > * {
     margin: 0 1rem;
 }
 
-.codewiser-fortify main {
+main {
     max-width: 600px;
     margin: 2rem auto;
     padding: 0 2rem 1rem;
@@ -94,7 +94,7 @@ body {
     border: 1px solid ButtonFace;
 }
 
-.codewiser-fortify main h1 {
+main h1 {
     font-size: 16px;
     text-align: center;
     padding: 1rem;
@@ -102,17 +102,17 @@ body {
     border-bottom: 1px solid ButtonFace;
 }
 
-.codewiser-fortify main form {
+main form {
     padding: 0;
     margin: 0 0 1rem;
 }
 
-.codewiser-fortify main form > div:not(:has(button)) {
+main form > div:not(:has(button)) {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
 }
-.codewiser-fortify main form div:has(button) {
+main form div:has(button) {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -120,34 +120,34 @@ body {
     margin-top: 1.5rem;
 }
 
-.codewiser-fortify main form label {
+main form label {
     margin-bottom: .5rem;
 }
 
-.codewiser-fortify main form input {
+main form input {
     width: 100%;
     margin-bottom: .5rem;
 }
 
-.codewiser-fortify .invalid {
+.invalid {
     color: ActiveText;
 }
 
-.codewiser-fortify .passkey-methods {
+.passkey-methods {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
 }
-.codewiser-fortify .passkey-methods label {
+.passkey-methods label {
     margin: 0;
     display: inline-flex;
     align-items: center;
 }
-.codewiser-fortify .passkey-methods input[type="radio"] {
+.passkey-methods input[type="radio"] {
     width: auto;
     margin: 0 .5rem 0 0;
 }
-.codewiser-fortify .alert {
+.alert {
     margin-bottom: 1rem;
     color: ActiveText;
     background-color: oklch(from ActiveText l c h / 5%);
@@ -155,7 +155,7 @@ body {
     border-left: 4px solid ActiveText;
     /*box-shadow: 0 0 3px ActiveText;*/
 }
-.codewiser-fortify .notice {
+.notice {
     margin-bottom: 1rem;
     color: HighlightText;
     background-color: oklch(from Highlight l c h / 5%);
@@ -163,28 +163,28 @@ body {
     /*box-shadow: 0 0 3px Highlight;*/
 }
 
-.codewiser-fortify .focus {
+.focus {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.codewiser-fortify .row {
+.row {
     margin-bottom: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.codewiser-fortify .row > * {
+.row > * {
     line-height: 2rem;
     margin: 0;
 }
 
-.codewiser-fortify .row form {
+.row form {
     margin: 0;
 }
-.codewiser-fortify .row form button {
+.row form button {
     padding: 6px;
 }
-.codewiser-fortify .row form div {
+.row form div {
     margin: 0;
 }

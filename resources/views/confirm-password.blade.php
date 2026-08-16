@@ -1,10 +1,5 @@
 @php
-    use Laravel\Fortify\Contracts\PasskeyUser;
     use Laravel\Fortify\Features;
-
-    $passkeys = Features::canManagePasskeys()
-        && request()->user() instanceof PasskeyUser
-        && request()->user()->hasPasskeysEnabled();
 @endphp
 
 @extends('fortify::layouts.fortify')
@@ -40,10 +35,12 @@
         </div>
     </form>
 
-    @if($passkeys)
+    @if(Features::canManagePasskeys())
 
-        <div id="passkeyConfirm" data-options-url="{{ route('passkey.confirm-options') }}"
-             data-confirm-url="{{ route('passkey.confirm') }}" hidden></div>
+        <div id="passkeyConfirm"
+             data-options-url="{{ route('passkey.confirm-options') }}"
+             data-confirm-url="{{ route('passkey.confirm') }}"
+             hidden></div>
 
         @push('scripts')
             <script src="/vendor/fortify/passkeys.js" defer></script>
