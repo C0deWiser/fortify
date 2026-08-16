@@ -1,8 +1,3 @@
-@php
-    use Laravel\Fortify\Features;
-    use Laravel\Fortify\Fortify;
-@endphp
-
 @extends('fortify::layouts.fortify')
 
 @section('title', __('Registration'))

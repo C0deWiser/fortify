@@ -1,8 +1,3 @@
-@php
-    use Laravel\Fortify\Contracts\PasskeyUser;
-    use Laravel\Fortify\Features;
-@endphp
-
 @extends('fortify::layouts.fortify')
 
 @section('title', __('Password'))

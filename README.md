@@ -17,6 +17,7 @@ resources.
 composer require codewiser/fortify
 
 php artisan fortify:install
+php artisan vendor:publish --tag=fortify
 ```
 
 Next, setup views in `FortifyServiceProvider` class.
@@ -45,12 +46,7 @@ class FortifyServiceProvider extends ServiceProvider
 }
 ```
 
-Publish and customize blades in `resources/views/vendor/fortify` however you 
-like.
-
-```php
-php artisan vendor:publish --tag=fortify
-```
+Finally, customize blades in `resources/views/vendor/fortify` however you like.
 
 ### Additional routes
 

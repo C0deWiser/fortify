@@ -1,7 +1,3 @@
-@php
-    use Illuminate\Contracts\Auth\MustVerifyEmail;
-@endphp
-
 @extends('fortify::layouts.fortify')
 
 @section('title', __('Profile information'))
