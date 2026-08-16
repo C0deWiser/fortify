@@ -1,11 +1,21 @@
-<div>
+@php
+    use Laravel\Fortify\Features;
+    use Laravel\Fortify\Fortify;
+@endphp
+
+@extends('fortify::layouts.fortify')
+
+@section('title', __('Registration'))
+
+@section('content')
+
     <!-- https://laravel.com/docs/12.x/fortify#registration -->
 
     <h1>@lang('Registration')</h1>
 
-    @include('auth.status')
+    @include('fortify::fragments.status')
 
-    <form method="post" action="{{ route('register') }}">
+    <form method="post" action="{{ route('register') }}" id="registerForm">
         @csrf
 
         <div>
@@ -13,7 +23,7 @@
             <input type="text" name="name" required autofocus autocomplete="name" value="{{ old('name') }}">
 
             @error('name')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -22,7 +32,7 @@
             <input type="email" name="email" required autocomplete="email" value="{{ old('email') }}">
 
             @error('email')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -31,7 +41,7 @@
             <input type="password" name="password" required autocomplete="new-password">
 
             @error('password')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -40,7 +50,7 @@
             <input type="password" name="password_confirmation" required>
 
             @error('password_confirmation')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -50,8 +60,4 @@
 
     </form>
 
-    <div>
-        <a href="{{ route('login') }}">@lang('Sign In')</a>
-    </div>
-
-</div>
+@endsection

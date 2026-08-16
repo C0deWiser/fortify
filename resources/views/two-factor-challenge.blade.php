@@ -1,9 +1,14 @@
-<div>
+@extends('fortify::layouts.fortify')
+
+@section('title', __('Login to the application'))
+
+@section('content')
+
     <!-- https://laravel.com/docs/12.x/fortify#authenticating-with-two-factor-authentication -->
 
     <h1>@lang('Login to the application')</h1>
 
-    @include('auth.status')
+    @include('fortify::fragments.status')
 
     <form method="post" action="{{ route('two-factor.login.store') }}">
         @csrf
@@ -13,7 +18,7 @@
             <input type="text" name="code" required autofocus autocomplete="one-time-code">
 
             @error('code')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -23,4 +28,4 @@
 
     </form>
 
-</div>
+@endsection

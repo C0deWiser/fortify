@@ -1,9 +1,19 @@
-<div>
+@php
+    use Illuminate\Support\Facades\Route;
+    use Laravel\Fortify\Fortify;
+@endphp
+
+@extends('fortify::layouts.fortify')
+
+@section('title', __('Email Verification'))
+
+@section('content')
+
     <!-- https://laravel.com/docs/12.x/fortify#email-verification -->
 
     <h1>@lang('Email Verification')</h1>
 
-    <p>
+    <p class="alert">
         @lang('You have to verify your email before you may continue to the application.')
         <br>
         {!! str(
@@ -11,7 +21,7 @@
         )->markdown() !!}
     </p>
 
-    @if(\Illuminate\Support\Facades\Route::has('user-profile-information.show'))
+    @if(Route::has('user-profile-information.show'))
         <p>
             {!! str(
                 __('You may change your email at [profile page](:href).', [
@@ -21,12 +31,12 @@
         </p>
     @endif
 
-    @if (session('status') == \Laravel\Fortify\Fortify::VERIFICATION_LINK_SENT)
-        @include('auth.status')
+    @if (session('status') == Fortify::VERIFICATION_LINK_SENT)
+        @include('fortify::fragments.status')
     @else
-        <div class="mb-4 font-medium text-sm text-green-600">
+        <p>
             @lang('Press a button below and we will send you a new email verification link.')
-        </div>
+        </p>
     @endif
 
     <form method="post" action="{{ route('verification.send') }}">
@@ -38,16 +48,4 @@
 
     </form>
 
-    <form method="post" action="{{ route('logout') }}">
-        @csrf
-
-        <div>
-            <button type="submit">@lang('Sign Out')</button>
-        </div>
-    </form>
-
-    <div>
-        <a href="/">@lang('Home')</a>
-    </div>
-
-</div>
+@endsection

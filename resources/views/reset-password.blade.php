@@ -1,9 +1,14 @@
-<div>
+@extends('fortify::layouts.fortify')
+
+@section('title', __('Resetting the Password'))
+
+@section('content')
+
     <!-- https://laravel.com/docs/12.x/fortify#resetting-the-password -->
 
     <h1>@lang('Resetting the Password')</h1>
 
-    @include('auth.status')
+    @include('fortify::fragments.status')
 
     <form method="post" action="{{ route('password.update') }}">
         @csrf
@@ -12,10 +17,11 @@
 
         <div>
             <label for="email">@lang('Email')</label>
-            <input type="email" name="email" required autofocus autocomplete="email" value="{{ request()->input('email') }}">
+            <input type="email" name="email" required autofocus autocomplete="email"
+                   value="{{ request()->input('email') }}">
 
             @error('email')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -24,7 +30,7 @@
             <input type="password" name="password" required autocomplete="new-password">
 
             @error('password')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -33,7 +39,7 @@
             <input type="password" name="password_confirmation" required>
 
             @error('password_confirmation')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -43,8 +49,4 @@
 
     </form>
 
-    <div>
-        <a href="{{ route('login') }}">@lang('Sign In')</a>
-    </div>
-
-</div>
+@endsection

@@ -1,8 +1,17 @@
-<div>
+@php
+    use Laravel\Fortify\Contracts\PasskeyUser;
+    use Laravel\Fortify\Features;
+@endphp
+
+@extends('fortify::layouts.fortify')
+
+@section('title', __('Password'))
+
+@section('content')
 
     <h1>@lang('Password')</h1>
 
-    @include('auth.status')
+    @include('fortify::fragments.status')
 
     <form method="post" action="{{ route('user-password.update') }}">
         @csrf
@@ -13,7 +22,7 @@
             <input type="password" name="current_password" required autofocus autocomplete="current-password">
 
             @error('current_password', 'updatePassword')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -22,7 +31,7 @@
             <input type="password" name="password" required autocomplete="new-password">
 
             @error('password', 'updatePassword')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -31,7 +40,7 @@
             <input type="password" name="password_confirmation" required>
 
             @error('password_confirmation', 'updatePassword')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="invalid">{{ $message }}</div>
             @enderror
         </div>
 
@@ -41,4 +50,4 @@
 
     </form>
 
-</div>
+@endsection

@@ -1,0 +1,190 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.codewiser-fortify {
+
+    font-family: system-ui;
+    font-size: 14px;
+
+    color: CanvasText;
+    background-color: Canvas;
+}
+
+.codewiser-fortify p,
+.codewiser-fortify ul {
+    margin: 0 0 1rem;
+}
+
+.codewiser-fortify a,
+.codewiser-fortify .button-link {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: LinkText;
+    box-shadow: none;
+    line-height: 1.5rem;
+}
+.codewiser-fortify a:hover,
+.codewiser-fortify .button-link:hover {
+    color: HighlightText;
+}
+.codewiser-fortify a:active,
+.codewiser-fortify .button-link:active {
+    color: ActiveText;
+}
+.codewiser-fortify a:visited,
+.codewiser-fortify .button-link:visited {
+    color: VisitedText;
+}
+
+.codewiser-fortify button,
+.codewiser-fortify input,
+.codewiser-fortify .notice,
+.codewiser-fortify .alert {
+    padding: 10px 12px;
+    font-size: 100%;
+}
+
+.codewiser-fortify button {
+    box-shadow: 0 0 3px ButtonFace;
+    border: 1px solid ButtonFace;
+    border-radius: 6px;
+    background-color: ButtonFace;
+    color: ButtonText;
+    cursor: pointer;
+}
+.codewiser-fortify input {
+    box-shadow: 0 0 3px ButtonFace inset;
+    border: 1px solid ButtonFace;
+    border-radius: 6px;
+    background-color: Field;
+    color: FieldText;
+}
+
+.codewiser-fortify nav {
+    padding: 1rem;
+    margin: 0 0 2rem;
+
+    text-align: center;
+    box-shadow: 0 0 3px ButtonFace;
+    border-bottom: 1px solid ButtonFace;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.codewiser-fortify nav > * {
+    margin: 0 1rem;
+}
+
+.codewiser-fortify main {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 2rem 1rem;
+
+    border-radius: 6px;
+    box-shadow: 0 0 3px ButtonFace;
+    border: 1px solid ButtonFace;
+}
+
+.codewiser-fortify main h1 {
+    font-size: 16px;
+    text-align: center;
+    padding: 1rem;
+    margin: 0 -2rem 2rem;
+    border-bottom: 1px solid ButtonFace;
+}
+
+.codewiser-fortify main form {
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.codewiser-fortify main form > div:not(:has(button)) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+.codewiser-fortify main form div:has(button) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.codewiser-fortify main form label {
+    margin-bottom: .5rem;
+}
+
+.codewiser-fortify main form input {
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.codewiser-fortify .invalid {
+    color: ActiveText;
+}
+
+.codewiser-fortify .passkey-methods {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+.codewiser-fortify .passkey-methods label {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+}
+.codewiser-fortify .passkey-methods input[type="radio"] {
+    width: auto;
+    margin: 0 .5rem 0 0;
+}
+.codewiser-fortify .alert {
+    margin-bottom: 1rem;
+    color: ActiveText;
+    background-color: oklch(from ActiveText l c h / 5%);
+    border-radius: 0;
+    border-left: 4px solid ActiveText;
+    /*box-shadow: 0 0 3px ActiveText;*/
+}
+.codewiser-fortify .notice {
+    margin-bottom: 1rem;
+    color: HighlightText;
+    background-color: oklch(from Highlight l c h / 5%);
+    border-left: 4px solid Highlight;
+    /*box-shadow: 0 0 3px Highlight;*/
+}
+
+.codewiser-fortify .focus {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.codewiser-fortify .row {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.codewiser-fortify .row > * {
+    line-height: 2rem;
+    margin: 0;
+}
+
+.codewiser-fortify .row form {
+    margin: 0;
+}
+.codewiser-fortify .row form button {
+    padding: 6px;
+}
+.codewiser-fortify .row form div {
+    margin: 0;
+}

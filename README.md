@@ -17,7 +17,6 @@ resources.
 composer require codewiser/fortify
 
 php artisan fortify:install
-php artisan vendor:publish --tag=fortify
 ```
 
 Next, setup views in `FortifyServiceProvider` class.
@@ -33,20 +32,25 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Fortify::loginView(fn() => view('auth.login'));
-        Fortify::registerView(fn() => view('auth.register'));
-        Fortify::verifyEmailView(fn() => view('auth.verify-email'));
-        Fortify::confirmPasswordView(fn() => view('auth.confirm-password'));
-        Fortify::twoFactorChallengeView(fn() => view('auth.two-factor-challenge'));
-        Fortify::requestPasswordResetLinkView(fn() => view('auth.forgot-password'));
-        Fortify::resetPasswordView(fn(Request $request) => view('auth.reset-password', [
+        Fortify::loginView(fn() => view('fortify::login'));
+        Fortify::registerView(fn() => view('fortify::register'));
+        Fortify::verifyEmailView(fn() => view('fortify::verify-email'));
+        Fortify::confirmPasswordView(fn() => view('fortify::confirm-password'));
+        Fortify::twoFactorChallengeView(fn() => view('fortify::two-factor-challenge'));
+        Fortify::requestPasswordResetLinkView(fn() => view('fortify::forgot-password'));
+        Fortify::resetPasswordView(fn(Request $request) => view('fortify::reset-password', [
             'request' => $request
         ]));
     }
 }
 ```
 
-Finally, customize blades in `resources/views/auth` however you like.
+Publish and customize blades in `resources/views/vendor/fortify` however you 
+like.
+
+```php
+php artisan vendor:publish --tag=fortify
+```
 
 ### Additional routes
 
