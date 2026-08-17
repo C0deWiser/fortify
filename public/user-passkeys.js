@@ -16,6 +16,26 @@
 
     form.style.display = 'block';
 
+    var nameInput = form.querySelector('input[name="name"]');
+
+    if (nameInput && !nameInput.value) {
+        nameInput.value = deviceName();
+    }
+
+    function deviceName() {
+        var ua = navigator.userAgent;
+
+        if (/iPhone/.test(ua)) return 'iPhone';
+        if (/iPad/.test(ua)) return 'iPad';
+        if (/Android/.test(ua)) return 'Android Device';
+        if (/CrOS/.test(ua)) return 'Chromebook';
+        if (/Mac OS X/.test(ua)) return 'Mac';
+        if (/Windows/.test(ua)) return 'Windows PC';
+        if (/Linux/.test(ua)) return 'Linux Device';
+
+        return '';
+    }
+
     function csrfHeaders() {
         var headers = {
             'Content-Type': 'application/json',
