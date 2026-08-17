@@ -7,14 +7,13 @@ body {
     margin: 0;
 
     color: CanvasText;
-    background-color: Canvas;
+    background-color: oklch(from Canvas calc(l * 0.92 + 0.04) c h);
 
     font-family: system-ui;
     font-size: 14px;
 }
 
-p,
-ul {
+p, ul {
     margin: 0 0 1rem;
 }
 
@@ -73,6 +72,7 @@ nav {
     text-align: center;
     box-shadow: 0 0 3px ButtonFace;
     border-bottom: 1px solid ButtonFace;
+    background: Canvas;
 
     display: flex;
     flex-wrap: wrap;
@@ -84,14 +84,29 @@ nav > * {
     margin: 0 1rem;
 }
 
+nav .active {
+    text-decoration: none;
+    color: CanvasText;
+}
+
 main {
     max-width: 600px;
     margin: 2rem auto;
     padding: 0 2rem 1rem;
+    box-sizing: border-box;
 
     border-radius: 6px;
     box-shadow: 0 0 3px ButtonFace;
     border: 1px solid ButtonFace;
+
+    background: Canvas;
+}
+@media screen and (max-width: 600px) {
+    main {
+        border-radius: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+    }
 }
 
 main h1 {

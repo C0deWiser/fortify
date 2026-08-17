@@ -10,7 +10,7 @@ Route::middleware(['auth', 'web'])->group(function () {
         ->name('user-profile-information.show');
 
     Route::view('/user/password', 'fortify::user-password')
-        ->when(Fortify::enabled(Fortify::updatePasswords()))
+        ->when(Fortify::canUpdatePasswords())
         ->name('user-password.show');
 
     Route::view('/user/two-factor-authentication', 'fortify::two-factor-setup')
@@ -23,5 +23,5 @@ Route::middleware(['auth', 'web'])->group(function () {
         ->when(Fortify::canManagePasskeys())
         // Route is protected with current password
         ->middleware((is_array($pk) && $pk['confirmPassword'] ?? false) ? 'password.confirm' : [])
-        ->name('passkey.index');
+        ->name('user-passkey.index');
 });
