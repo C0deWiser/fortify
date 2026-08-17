@@ -10,6 +10,10 @@
 
     @include('fortify::fragments.status')
 
+    <p class="notice">
+        @lang('Enter your account email below. We will send you a secure link to reset your password.')
+    </p>
+
     <form method="post" action="{{ route('password.email') }}">
         @csrf
 

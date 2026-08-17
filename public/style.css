@@ -58,7 +58,7 @@ input {
     background-color: Field;
     color: FieldText;
 }
-code {
+code, mark {
     color: MarkText;
     background: Mark;
     padding-left: .25rem;
@@ -173,16 +173,13 @@ main form input[type="checkbox"] {
     margin-bottom: 1rem;
     color: ActiveText;
     background-color: oklch(from ActiveText l c h / 5%);
-    border-radius: 0;
     border-left: 4px solid ActiveText;
-    /*box-shadow: 0 0 3px ActiveText;*/
 }
 .notice {
     margin-bottom: 1rem;
     color: HighlightText;
     background-color: oklch(from Highlight l c h / 5%);
     border-left: 4px solid Highlight;
-    /*box-shadow: 0 0 3px Highlight;*/
 }
 
 .focus {

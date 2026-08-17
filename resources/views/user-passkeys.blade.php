@@ -29,7 +29,9 @@
 
     @include('fortify::fragments.status')
 
-    <p>@lang('Passkeys allow users to authenticate without passwords using platform authenticators such as Face ID, Touch ID, Windows Hello, or hardware security keys.')</p>
+    {!! str(__('Passkeys allow users to authenticate without passwords using platform authenticators such as `Face ID`, `Touch ID`, `Windows Hello`, or hardware security keys.'))
+        ->markdown()
+    !!}
 
     <p class="alert" id="passkeyUnsupported" style="display: none">
         <!-- js publishes environment errors to here -->

@@ -90,9 +90,9 @@
                 @lang('Two-factor authentication (2FA) is an additional layer of security that ensures that only you can access your Account, even if your password is revealed to someone else.')
             </p>
 
-            <p>
-                @lang('Before using 2FA, you must install any TOTP application (e.g. Google Authenticator, Twilio Authy or other) on your trusted device (a phone usually) and connect it by scanning the QR-code that will appear here after enabling the function.')
-            </p>
+            {!! str(__('Before using 2FA, you must install any TOTP application (e.g. `Google Authenticator`, `Twilio Authy`, `Apple Passwords` or other) on your trusted device (a phone usually) and connect it by scanning the QR-code that will appear here after enabling the function.'))
+                ->markdown()
+            !!}
 
             <p>
                 @lang('The first time you sign in on a new device or browser, you\'ll need to enter your password and the digital verification code that\'s automatically displayed on your trusted device in the TOTP app.')
