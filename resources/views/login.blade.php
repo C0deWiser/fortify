@@ -21,6 +21,7 @@
             <label for="email">@lang('Email')</label>
             <input type="email" name="email" id="email" required autofocus autocomplete="email webauthn" value="{{ old('email') }}">
 
+            <!-- js publishes passkey response errors to here -->
             <div class="invalid">@error('email'){{ $message }}@enderror</div>
         </div>
 

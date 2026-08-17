@@ -25,9 +25,8 @@
             <label for="password">@lang('Password')</label>
             <input type="password" name="password" id="password" required autofocus autocomplete="current-password">
 
-            @error('password')
-            <div class="invalid">{{ $message }}</div>
-            @enderror
+            <!-- js publishes passkey response errors to here -->
+            <div class="invalid">@error('password'){{ $message }}@enderror</div>
         </div>
 
         <div>
