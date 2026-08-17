@@ -57,7 +57,7 @@
 
         @if (session('status') == Fortify::TWO_FACTOR_AUTHENTICATION_ENABLED)
 
-            <p class="notice">
+            <p>
                 @lang('Please finish configuring two factor authentication below.')
             </p>
 
