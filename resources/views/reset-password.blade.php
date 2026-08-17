@@ -17,7 +17,7 @@
 
         <div>
             <label for="email">@lang('Email')</label>
-            <input type="email" name="email" required autofocus autocomplete="email"
+            <input type="email" name="email" id="email" required autofocus autocomplete="email"
                    value="{{ request()->input('email') }}">
 
             @error('email')
@@ -27,7 +27,7 @@
 
         <div>
             <label for="password">@lang('New password')</label>
-            <input type="password" name="password" required autocomplete="new-password">
+            <input type="password" name="password" id="password" required autocomplete="new-password">
 
             @error('password')
             <div class="invalid">{{ $message }}</div>
@@ -36,7 +36,7 @@
 
         <div>
             <label for="password_confirmation">@lang('Password confirmation')</label>
-            <input type="password" name="password_confirmation" required>
+            <input type="password" name="password_confirmation" id="password_confirmation" required>
 
             @error('password_confirmation')
             <div class="invalid">{{ $message }}</div>

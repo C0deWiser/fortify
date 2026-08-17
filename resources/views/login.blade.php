@@ -19,16 +19,14 @@
 
         <div>
             <label for="email">@lang('Email')</label>
-            <input type="email" name="email" required autofocus autocomplete="email webauthn" value="{{ old('email') }}">
+            <input type="email" name="email" id="email" required autofocus autocomplete="email webauthn" value="{{ old('email') }}">
 
-            @error('email')
-            <div class="invalid">{{ $message }}</div>
-            @enderror
+            <div class="invalid">@error('email'){{ $message }}@enderror</div>
         </div>
 
         <div>
             <label for="password">@lang('Password')</label>
-            <input type="password" name="password" required autocomplete="current-password">
+            <input type="password" name="password" id="password" required autocomplete="current-password">
 
             @error('password')
             <div class="invalid">{{ $message }}</div>
@@ -36,8 +34,8 @@
         </div>
 
         <div>
+            <input type="checkbox" name="remember" id="remember">
             <label for="remember">@lang('Remember me')</label>
-            <input type="checkbox" name="remember">
         </div>
 
         <div>

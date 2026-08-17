@@ -14,7 +14,7 @@
 
         <div>
             <label for="current_password">@lang('Current password')</label>
-            <input type="password" name="current_password" required autofocus autocomplete="current-password">
+            <input type="password" name="current_password" id="current_password" required autofocus autocomplete="current-password">
 
             @error('current_password', 'updatePassword')
             <div class="invalid">{{ $message }}</div>
@@ -23,7 +23,7 @@
 
         <div>
             <label for="password">@lang('New password')</label>
-            <input type="password" name="password" required autocomplete="new-password">
+            <input type="password" name="password" id="password" required autocomplete="new-password">
 
             @error('password', 'updatePassword')
             <div class="invalid">{{ $message }}</div>
@@ -32,7 +32,7 @@
 
         <div>
             <label for="password_confirmation">@lang('Password confirmation')</label>
-            <input type="password" name="password_confirmation" required>
+            <input type="password" name="password_confirmation" id="password_confirmation" required>
 
             @error('password_confirmation', 'updatePassword')
             <div class="invalid">{{ $message }}</div>

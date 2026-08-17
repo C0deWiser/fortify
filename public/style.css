@@ -122,17 +122,20 @@ main form {
     margin: 0 0 1rem;
 }
 
-main form > div:not(:has(button)) {
+main form > *:not(:has(button)) {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
 }
-main form div:has(button) {
+main form *:has(button) {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     margin-top: 1.5rem;
+}
+main form *:has(input[type="checkbox"]) {
+    display: block;
 }
 
 main form label {
@@ -142,6 +145,10 @@ main form label {
 main form input {
     width: 100%;
     margin-bottom: .5rem;
+}
+main form input[type="checkbox"] {
+    width: auto;
+    margin-bottom: 0;
 }
 
 .invalid {

@@ -72,7 +72,7 @@
 
                 <div>
                     <label for="code">@lang('Authentication code')</label>
-                    <input type="text" name="code" required autocomplete="one-time-code">
+                    <input type="text" name="code" id="code" required autocomplete="one-time-code">
 
                     @error('code', 'confirmTwoFactorAuthentication')
                     <div class="invalid">{{ $message }}</div>

@@ -14,8 +14,8 @@
         @csrf
 
         <div>
-            <label for="code">@lang('Confirmation code')</label>
-            <input type="text" name="code" required autofocus autocomplete="one-time-code">
+            <label for="code">@lang('Authentication code')</label>
+            <input type="text" name="code" id="code" required autofocus autocomplete="one-time-code">
 
             @error('code')
             <div class="invalid">{{ $message }}</div>

@@ -15,7 +15,7 @@
 
         <div>
             <label for="email">@lang('Email')</label>
-            <input type="email" name="email" required autofocus autocomplete="email" value="{{ old('email') }}">
+            <input type="email" name="email" id="email" required autofocus autocomplete="email" value="{{ old('email') }}">
 
             @error('email')
             <div class="invalid">{{ $message }}</div>

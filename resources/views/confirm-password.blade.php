@@ -23,7 +23,7 @@
 
         <div>
             <label for="password">@lang('Password')</label>
-            <input type="password" name="password" required autofocus autocomplete="current-password">
+            <input type="password" name="password" id="password" required autofocus autocomplete="current-password">
 
             @error('password')
             <div class="invalid">{{ $message }}</div>

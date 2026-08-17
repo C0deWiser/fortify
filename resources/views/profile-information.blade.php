@@ -14,7 +14,7 @@
 
         <div>
             <label for="name">@lang('Name')</label>
-            <input type="text" name="name" required autofocus autocomplete="name"
+            <input type="text" name="name" id="name" required autofocus autocomplete="name"
                    value="{{ request()->user()->name }}">
 
             @error('name', 'updateProfileInformation')
@@ -24,7 +24,7 @@
 
         <div>
             <label for="email">@lang('Email')</label>
-            <input type="email" name="email" required autocomplete="email" value="{{ request()->user()->email }}">
+            <input type="email" name="email" id="email" required autocomplete="email" value="{{ request()->user()->email }}">
 
             @error('email', 'updateProfileInformation')
             <div class="invalid">{{ $message }}</div>

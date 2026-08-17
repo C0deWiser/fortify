@@ -85,7 +85,7 @@
 
         <div>
             <label for="name">@lang('Passkey name')</label>
-            <input type="text" name="name" required value="{{ old('name') }}" placeholder="@lang('e.g. My Phone')">
+            <input type="text" name="name" id="name" required value="{{ old('name') }}" placeholder="@lang('e.g. My Phone')">
 
             <!-- js publishes response errors to here -->
             <div class="invalid">@error('name'){{ $message }}@enderror</div>
