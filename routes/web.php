@@ -3,25 +3,35 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features as Fortify;
 
-Route::middleware(['auth', 'web'])->group(function () {
+Route::middleware(['auth'])->group(function () {
+
+    $middlewares = config('fortify.middleware', []);
 
     Route::view('/user/profile-information', 'fortify::profile-information')
         ->when(Fortify::canUpdateProfileInformation())
+        ->middleware($middlewares)
         ->name('user-profile-information.show');
 
     Route::view('/user/password', 'fortify::user-password')
         ->when(Fortify::canUpdatePasswords())
+        ->middleware($middlewares)
         ->name('user-password.show');
+
+    $pk = config('fortify-options.two-factor-authentication');
+    $pk = (is_array($pk) && $pk['confirmPassword'] ?? false) ? ['password.confirm'] : [];
 
     Route::view('/user/two-factor-authentication', 'fortify::two-factor-setup')
         ->when(Fortify::canManageTwoFactorAuthentication())
+        ->middleware($middlewares)
+        ->middleware($pk)
         ->name('two-factor.show');
 
     $pk = config('fortify-options.passkeys');
+    $pk = (is_array($pk) && $pk['confirmPassword'] ?? false) ? ['password.confirm'] : [];
 
     Route::view('/user/passkeys', 'fortify::user-passkeys')
         ->when(Fortify::canManagePasskeys())
-        // Route is protected with current password
-        ->middleware((is_array($pk) && $pk['confirmPassword'] ?? false) ? 'password.confirm' : [])
+        ->middleware($middlewares)
+        ->middleware($pk)
         ->name('user-passkey.index');
 });
