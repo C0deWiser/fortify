@@ -5,7 +5,7 @@
 
     @foreach($menu->toArray() as $item)
         <x-fortify-link route="{{ $item['route'] }}">
-            {{ $item['name'] }}
+            {!! $item['name'] !!}
         </x-fortify-link>
     @endforeach
 

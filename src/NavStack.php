@@ -31,10 +31,15 @@ class NavStack implements Arrayable
                 ->when(Features::canManagePasskeys(), fn(self $stack) => $stack
                     ->push('user-passkey.index', __('Passkeys'))
                 )
-                ->when(fn() => $user instanceof MustVerifyEmail && ! $user->hasVerifiedEmail(),
-                    fn(self $stack) => $stack
+                ->when($user instanceof MustVerifyEmail, fn(self $stack) => $stack
+                    ->when($user->hasVerifiedEmail(),
+                        fn(self $stack) => $stack
+                            ->push('email-verified.example', '<code>verified</code>'),
+                        fn(self $stack) => $stack
                         ->push('verification.notice', __('Email Verification'))
-                ),
+                    )
+                )
+                ->push('password-confirmation.example', '<code>password.confirm</code>'),
             // Guest
             fn(self $stack) => $stack
                 ->push('login', __('Sign In'))

@@ -35,3 +35,11 @@ Route::middleware(['auth'])->group(function () {
         ->middleware($pk)
         ->name('user-passkey.index');
 });
+
+Route::view('/example/restricted-area', 'fortify::examples.password-confirmed')
+    ->middleware(['web', 'password.confirm'])
+    ->name('password-confirmation.example');
+
+Route::view('/example/email-verified', 'fortify::examples.email-verified')
+    ->middleware(['web', 'verified'])
+    ->name('email-verified.example');
