@@ -7,6 +7,11 @@ use Illuminate\Support\ServiceProvider;
 
 class AssetsServiceProvider extends ServiceProvider
 {
+    public function register(): void
+    {
+        $this->app->singleton(NavStack::class, NavStack::class);
+    }
+
     public function boot(): void
     {
         Blade::anonymousComponentPath(__DIR__.'/../resources/views/components');
