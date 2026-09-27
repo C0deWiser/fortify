@@ -31,6 +31,7 @@ class NavStack implements Arrayable
                 ->when(Features::canManagePasskeys(), fn(self $stack) => $stack
                     ->push('user-passkey.index', __('Passkeys'))
                 )
+                ->push('require-auth.example', '<code>auth</code>')
                 ->when($user instanceof MustVerifyEmail, fn(self $stack) => $stack
                     ->when($user->hasVerifiedEmail(),
                         fn(self $stack) => $stack
@@ -39,7 +40,8 @@ class NavStack implements Arrayable
                         ->push('verification.notice', __('Email Verification'))
                     )
                 )
-                ->push('password-confirmation.example', '<code>password.confirm</code>'),
+                ->push('password-confirmation.example', '<code>password.confirm</code>')
+            ,
             // Guest
             fn(self $stack) => $stack
                 ->push('login', __('Sign In'))
@@ -49,6 +51,7 @@ class NavStack implements Arrayable
                 ->when(Features::enabled(Features::resetPasswords()), fn(self $stack) => $stack
                     ->push('password.request', __('Password reset'))
                 )
+                ->push('require-auth.example', '<code>auth</code>'),
         );
     }
 

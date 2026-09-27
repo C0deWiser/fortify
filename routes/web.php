@@ -43,3 +43,7 @@ Route::view('/example/restricted-area', 'fortify::examples.password-confirmed')
 Route::view('/example/email-verified', 'fortify::examples.email-verified')
     ->middleware(['web', 'verified'])
     ->name('email-verified.example');
+
+Route::view('/example/auth', 'fortify::examples.require-auth')
+    ->middleware(['web', 'auth'])
+    ->name('require-auth.example');
